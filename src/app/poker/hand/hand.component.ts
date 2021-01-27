@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Card} from '../../card';
-import {HandExtractorImpl, HandUtil, StrictHand} from './hand.util';
+import {HandService, StrictHand} from './hand.service';
 import {DeckStoreService} from '../deck-store.service';
 
 @Component({
@@ -12,8 +12,8 @@ export class HandComponent implements OnInit {
 
   constructor(
     private deckStore: DeckStoreService,
-    public handUtil: HandUtil = new HandUtil(),
-    public handExtractor: HandExtractorImpl = new HandExtractorImpl()
+    public handUtil: HandService = new HandService(),
+    public handExtractor: HandService = new HandService()
   ) {
   }
 
